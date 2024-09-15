@@ -103,9 +103,33 @@ Pointer that refers to the current branch or commit that I'm working on in my re
 ## Q2
 ### COMMIT
 * before
-![alt text](image.png)
+    ![alt text](image.png)
 * after commit
+    ![alt text](image-1.png)
 
+### BRANCH
+* before
+    ![alt text](image-2.png)
+    ![alt text](image-5.png)
+* after new a branch and checkout 
+    ![alt text](image-7.png)
+    ![alt text](image-6.png)
+    ![alt text](image-8.png)
+
+* before
+* after
+
+* before
+* after
+
+* before
+* after
+
+* before
+* after
+
+* before
+* after
 
 ## Q3
 I always use syntax like this:
