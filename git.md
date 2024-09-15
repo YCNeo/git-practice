@@ -79,6 +79,8 @@ Date:   Thu Sep 12 23:13:50 2024 +0800
 ![](./images/commit-and-tree.png)
 ![](./images/commits-and-parents.png)
 
+It is worth mentioning that the tree objects, blob objects and commit object are ___stored in the same directory___ `.git/objects/`.
+
 ### branch
 __Definition__
 Branch is essentially a __moving pointer__ to a specific commit.
@@ -97,9 +99,13 @@ Pointer that refers to the current branch or commit that I'm working on in my re
 ![](./images/branch-and-history.png)
 ![](./images/head-to-master.png)
 
-It is worth mentioning that the tree objects, blob objects and commit object are ___stored in the same directory___ `.git/objects/`.
 
 ## Q2
+### COMMIT
+* before
+![alt text](image.png)
+* after commit
+
 
 ## Q3
 I always use syntax like this:
