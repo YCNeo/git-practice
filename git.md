@@ -116,7 +116,9 @@ Pointer that refers to the current branch or commit that I'm working on in my re
     ![alt text](image-6.png)
     ![alt text](image-8.png)
 
+### PUSH
 * before
+    ![alt text](image-9.png)
 * after
 
 * before
