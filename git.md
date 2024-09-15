@@ -118,20 +118,13 @@ Pointer that refers to the current branch or commit that I'm working on in my re
 
 ### PUSH
 * before
-    ![alt text](image-9.png)
+    ![alt text](image-11.png)
 * after
+    ![alt text](image-10.png)
+    ![alt text](image-12.png)
 
-* before
-* after
-
-* before
-* after
-
-* before
-* after
-
-* before
-* after
+### after a lot of operation
+![alt text](image-13.png)
 
 ## Q3
 I always use syntax like this:
