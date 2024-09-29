@@ -1,4 +1,12 @@
 # Backend
+## `npm install express` 
+1. 觀察 package.json 的變化
+2. 觀察 node_modules 裡面有什麼
+    |              before command              |              after command               | compare                                                                                          |
+    | :--------------------------------------: | :--------------------------------------: | ------------------------------------------------------------------------------------------------ |
+    | ![alt text](./assets/images/image-3.png) | ![alt text](./assets/images/image-4.png) | There add a property named "dependencies" to controll all packages                               |
+    | ![alt text](./assets/images/image-1.png) |             a lot of folders             | There is a lot folders appear after command. Overall, there add all needed fuction or type, etc. |
+
 ## package.json 中的 dependencies 與 devDependencies 分別是什麼
 * __dependencies__: 
 * __devDependencies__: 
