@@ -6,10 +6,8 @@ function doJob(job, time, cb) {
     }, time);
 }
 
-// 老師似乎沒有事先宣告(?)
-let now = new Date();
-
 // 刷牙 1sec -> 吃早餐 3 sec -> 寫功課 1sec -> 吃午餐 2sec
+let now = new Date();
 console.log(`開始工作 at ${now.toISOString()}`);
 
 // write your code here
