@@ -101,6 +101,62 @@ const port = process.env.PORT || 3000;
 
 ## 範例程式中用 require，但上週的 Stack 是用 import/export，這兩種分別是 JavaScript 引用模組的兩種方式: CJS vs ESM，這兩者分別怎麼用？
 
+### CommonJS (CJS) vs ES Modules (MJS)
+| Feature                   | **CommonJS (CJS)**            | **ES Modules (MJS)**                             |
+| ------------------------- | ----------------------------- | ------------------------------------------------ |
+| **Syntax**                | `require()`, `module.exports` | `import`, `export`                               |
+| **Loading**               | Synchronous                   | Asynchronous                                     |
+| **Support in Browsers**   | Not supported natively        | Supported natively                               |
+| **Support in Node.js**    | Default module system         | Supported but needs `.mjs` or `"type": "module"` |
+| **Use in Node.js**        | Widely used                   | Increasingly used in modern projects             |
+| **Tree-shaking**          | Not supported                 | Supported                                        |
+| **File Extension**        | `.js`                         | `.mjs` or `.js` (with `"type": "module"`)        |
+| **Strict mode**           | Not enforced by default       | Always in strict mode                            |
+| **Top-level `await`**     | Not supported                 | Supported                                        |
+| **Circular dependencies** | runs code during loading      | more predictable execution                       |
+
+### 用法
+* **CJS**: 
+  * `require()`: 匯入模組.
+  * `module.exports / exports`: 匯出模組.
+  * expamle
+    ```js
+    // math.js (Exporting module)
+    function add(a, b) {
+      return a + b;
+    }
+
+    module.exports = { add };
+
+    // main.js (Importing module)
+    const math = require('./math');
+    console.log(math.add(2, 3));  // Output: 5
+    ```
+* **MJS**:
+  * `import / export`: 匯入 / 匯出模組.
+  * example:
+    ```js
+    // math.mjs (Exporting module)
+    export function add(a, b) {
+      return a + b;
+    }
+
+    // main.mjs (Importing module)
+    import { add } from './math.mjs';
+    console.log(add(2, 3));  // Output: 5
+    ```
+* **Importing CJS in MJS**:
+  * Use import for CJS modules, but treat them as `default exports`
+  * example:
+    ```js
+    import commonjsModule from './commonjsModule';
+    ```
+* **Importing MJS in CJS**:
+  * Use dynamic `import()` (which returns a promise)
+  * example:
+    ```js
+    const { add } = await import('./math.mjs');
+    ```
 
 ## 進階題:
 ### [localhost](http://localhost) 是什麼？
