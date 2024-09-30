@@ -1,7 +1,7 @@
 # Backend
 ## `npm install express` 
-1. 觀察 package.json 的變化
-2. 觀察 node_modules 裡面有什麼
+1. 觀察 `package.json` 的變化
+2. 觀察 `node_modules` 裡面有什麼
     |              before command              |              after command               | compare                                                                                          |
     | :--------------------------------------: | :--------------------------------------: | ------------------------------------------------------------------------------------------------ |
     | ![alt text](./assets/images/image-3.png) | ![alt text](./assets/images/image-4.png) | There add a property named "dependencies" to controll all packages                               |
@@ -73,12 +73,31 @@ $ move .\test_copy.txt .\test2.txt
 > <br>ref: https://www.ruanyifeng.com/blog/2016/10/npm_scripts.html
 
 ## Port number 要怎麼以環境變數來設定？
-
+使用 `.env` 來存 `port=5000`，並在 `./app.js` 中用以下方式取用
+```js
+require('dotenv').config();
+// ...
+const port = process.env.PORT || 3000;
+// ...
+```
+然後執行 `node app.js` 即可。
 
 ## 關於哪些檔案應該要被放上 github repo 這個問題，描述看看為什麼你選擇上傳某些檔案、選擇不上傳某些檔案，決策的要素是什麼？
 * __上傳__: 
+  * `./assets/images/`: 輔助 `readme.md` 使用
+  * `.gitignore`: 過濾上傳的內容
+  * `app.js`: 主要程式碼
+  * `package.json`: 我的專案管理根據
+  * `package-lock.json`: 由於其文件內部描述了 `package.json` 鎖定安裝時包的版本號，並且需要傳到git，以保證其他人在 `npm install` 時大家的 dependencies 能保證一致。
+  * `readme.md`: 該專案的主要描述文件
 * __不上傳__: 
+  * `./assets/TXT/`: 個人實驗用資料夾
+  * `./node_modules/`: 每個使用者執行 `npm install` 即可下載一樣的東西，無須上傳浪費硬體空間
+  * `.env`: 此檔案通常用以存放一些個人所使用的環境變數，如果上傳到git，並被其他人直接使用，有可能出現無法預測的問題
 * __要素__: 
+  * 是否是`共用內容`?
+  * 是否有`代替方法`使得空間不會浪費?
+  * 是否是`規範`一類的東西?
 
 ## 範例程式中用 require，但上週的 Stack 是用 import/export，這兩種分別是 JavaScript 引用模組的兩種方式: CJS vs ESM，這兩者分別怎麼用？
 
