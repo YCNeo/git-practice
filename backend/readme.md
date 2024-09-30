@@ -160,4 +160,30 @@ const port = process.env.PORT || 3000;
 
 ## 進階題:
 ### [localhost](http://localhost) 是什麼？
+localhost 從自己的角度看是自己正在使用的電腦的`主機名稱`。在網路的世界中，每一台電腦都有 IP，而 `127.0.0.1` 則是自己的電腦透過`通訊協議`連接自己點腦時所使用的 IP
 ### `curl` 是什麼？查查看怎麼用 curl 來測試網路連線？常用參數有哪些？
+* `curl` 是什麼？`cURL`，全名為 Client URL，是一個強大的 command-line tool 和 library，用於通過各種網絡協議在服務器與客戶端之間`傳輸數據`。它廣泛應用於開發者、系統管理員的日常工作中，並且經常用於腳本中自動化處理與網絡請求相關的任務。
+* 查查看怎麼用 curl 來測試網路連線？
+    ```pwsh
+    # get all content
+    $ curl https://www.example.com
+
+    # get header
+    $ curl -I https://www.example.com 
+
+    # get specific URL header
+    $ curl -I https://www.example.com:8080  
+
+    # verbose mode, to get details
+    $ curl -v https://www.example.com 
+    ```
+* 常用參數有哪些？
+  * `-I`: Fetch headers only.
+  * `-v`: Verbose output.
+  * `-s`: Silent mode.
+  * `-o /dev/null`: Discard output.
+  * `-w`: Write out variables.
+  * `-x or --proxy`: Use a proxy server.
+  * `-u`: Specify username and password.
+  * `-k`: Allow insecure SSL connections.
+  * `--connect-timeout`: Set maximum time in seconds for the connection phase.
