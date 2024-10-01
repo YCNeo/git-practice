@@ -120,7 +120,7 @@ const port = process.env.PORT || 3000;
 | **Circular dependencies** | runs code during loading      | more predictable execution                       |
 
 <details>
-<summary><h3> Note </h3></summary>
+<summary><h3> Note about some property </h3></summary>
 
 * **Tree-shaking**: 指的是 Javascript 將程式碼打包中的一個過程，這個過程會`剔除`未使用的程式以減少最終打包的大小，並優化效能
   * example
