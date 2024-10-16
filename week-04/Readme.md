@@ -56,11 +56,23 @@
     ```
 
 7. Security Group 是什麼？用途為何？有什麼設定原則嗎？
+   - Security Groups ( SG ) 是 AWS 中用來控制 EC2 instance（以及其他服務）進出流量的虛擬防火牆。它們的主要作用是定義哪些網路流量允許進入或離開您的 AWS 資源，從而保護您的應用程序和數據。
+   - 用途
+     1. 控制入站和出站流量： 您可以使用 SG 指定允許哪些協議、端口和來源（或目的地）IP 地址的流量進入或離開 instance。
+     2. instance 級別的安全性： SG 在 instance 層面運作，提供細粒度的網路流量控制。
+     3. 狀態檢查： SG 是有狀態的，這意味著如果允許入站流量，相關的出站流量將自動被允許，反之亦然。
 8. 什麼是 sudo? 為什麼有的時候需要加上 sudo，有時候不用？
+   - 讓一般使用者可以快速使用管理員權限執行命令的 CLI 指令前綴
+   - 當需要執行某些行為但權限不夠時就會使用 `sudo`
+    > [Linux 的 su 與 sudo 指令教學與範例[轉錄]](https://medium.com/linux-on-raspberry-pi4/linux-%E7%9A%84-su-%E8%88%87-sudo-%E6%8C%87%E4%BB%A4%E6%95%99%E5%AD%B8%E8%88%87%E7%AF%84%E4%BE%8B-%E8%BD%89%E9%8C%84-a47251c5296)
 9. Nginx 的 Log 檔案在哪裡？你怎麼找到的？怎麼看 Nginx 的 Log？
+   - `/var/log/nginx/` 資料夾底下的 `access.log` 和 `error.log`
+   - 查到的
+   - `cat /var/log/nginx/access.log` or `cat /var/log/nginx/error.log`
 10. 其他你在過程中遭遇的問題，有找到解答就記錄下來，沒有可以把問題放著，下次上課討論。如果沒有遇到任何問題，也可以回答「無」
+    - 有，都記錄在 Note
 11. 列出完成本作業時參考的資料
-    - 各題底下有直接關的已列出，額外資料已整理在下方 Note
+    - 各題底下有直接關係的已列出，額外資料已整理在下方 Note
 12. (optional) 如果你很初學，不放心自己的過程是否正確，可以紀錄過程，我會盡量幫忙看
 
 ## Notes
